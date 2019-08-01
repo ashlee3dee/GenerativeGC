@@ -1,0 +1,6 @@
+*.obj
+*.png
+*.jpg
+*.svg
+*.gcode
+!test
