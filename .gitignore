@@ -1,4 +1,6 @@
 *.obj
+*.mtl
+*.blend
 *.png
 *.jpg
 *.svg
