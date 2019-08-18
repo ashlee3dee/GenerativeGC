@@ -53,27 +53,27 @@ class GMatrix {
     };
   }
   PVector applyPerspective(PVector _v) {
-    float[][] projection2 = {
+    float[][] projection = {
       {1, 0, 0}, 
       {0, 1, 0}
     };
     _v = matmul(rotationMatrixX, _v);
     _v = matmul(rotationMatrixY, _v);
     _v = matmul(rotationMatrixZ, _v);
-    _v = matmul(projection2, _v);
+    _v = matmul(projection, _v);
     return _v;
   }
     PVector applyPerspective(PVector _v, float distance) {
     float d = distance;
     float z=1/(d-_v.z);
-    float[][] projection1 = {
+    float[][] projection = {
       {z, 0, 0}, 
       {0, z, 0}
     };
     _v = matmul(rotationMatrixX, _v);
     _v = matmul(rotationMatrixY, _v);
     _v = matmul(rotationMatrixZ, _v);
-    _v = matmul(projection1, _v);
+    _v = matmul(projection, _v);
     return _v;
   }
 

@@ -5,5 +5,6 @@ class Creator {
   Creator(Machine t_machine, Settings t_settings) {
     machine = t_machine;
     settings = t_settings;
+    //settings.
   }
 }

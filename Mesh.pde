@@ -6,13 +6,17 @@ class Mesh extends Creator { //<>//
     filePath = _filePath;
     matrix = new GMatrix();
   }
+  Mesh(Machine t_machine, Settings t_settings, String _filePath, PVector _rotationVector) {
+    super(t_machine, t_settings);
+    filePath = _filePath;
+    matrix = new GMatrix();
+    matrix.setRotationVector(_rotationVector);
+  }
   void generate(float c_x, float c_y, float c_s, float c_d) {
-    PVector rotationVector = new PVector(0, 0, 0);
-    matrix.setRotationVector(rotationVector);
     RShape t_shape = new RShape();
     PShape t_obj = loadShape(filePath);
     for (int i = 0; i < t_obj.getChildCount(); i++) {
-      
+
       if (true) { //backface culling result
         PShape face = t_obj.getChild(i);
         RShape _face = new RShape();

@@ -49,9 +49,9 @@ void setup() {
 
   //String path = "obj/Lamborghini_Low_Poly.obj";
   println("mesh debug:");
-  Mesh mesh1 = new Mesh(_machine, _settings, "obj/Lamborghini_Low_Poly.obj");
+  Mesh mesh1 = new Mesh(_machine, _settings, "obj/test.obj", new PVector(0,0,0));
   println("mesh loaded");
-  mesh1.generate(_machine.table_width/2, _machine.table_length/2, 2, 100);
+  mesh1.generate(_machine.table_width/2, _machine.table_length/2, 15, 100);
   println("mesh generated");
   _processor.addObject(mesh1);
   println("mesh added");
@@ -59,8 +59,9 @@ void setup() {
   println("processed");
   _drawer = new Drawer(_processor, _machine);
   _gCodeGenerator = new GCodeGenerator(_machine, _settings, _processor);
+  _gCodeGenerator.generate();
   println("gcode generated");
-  _gCodeGenerator.generate().export();
+  //_gCodeGenerator.export();
   println("gcode exported");
 }
 
